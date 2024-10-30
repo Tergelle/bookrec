@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Loading the data
-df = pd.read_csv('books_df.csv')
+df = pd.read_csv('Books_df.csv')
 
 # Dropping missing values from the Author column
 df = df.dropna(subset=['Author'])
