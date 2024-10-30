@@ -34,7 +34,10 @@ with st.sidebar:
     st.header("Filter Options")
     genre = st.selectbox("Select Genre", df['Main Genre'].unique())
     book_type = st.selectbox("Select Book Type", df['Type'].unique())
-    min_rating, max_rating = st.slider("Select Rating Range", 0.0, 5.0, (3.0, 4.0))
+    min_rating, max_rating = st.select_slider(
+    "Select Rating Range",
+    options=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0],
+    value=(3.0, 4.0))
     min_price, max_price = st.slider("Select Price Range (USD)", 0.0, df['price_usd_approx'].max(), (5.0, 50.0))
     get_result = st.button("Get Result")
 
