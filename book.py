@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
+@st.cache_data
+def load_data():
+    return pd.read_csv('Books_df.csv')
 
-# Loading the data
-df = pd.read_csv('Books_df.csv')
+df = load_data()
 
 # Dropping missing values from the Author column
 df = df.dropna(subset=['Author'])
